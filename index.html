@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XYZ Company - Startup Funding</title>
+    <style>
+    
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        /* Header */
+        header {
+            background: #011f33;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #021522 3px solid;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+        }
+        header li {
+            display: inline;
+            padding: 0 20px;
+        }
+        header #branding {
+            float: left;
+        }
+        header #branding h1 {
+            margin: 0;
+        }
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+        /* Main content */
+        main {
+            padding: 80px 0 30px;
+            min-height: calc(100vh - 60px);
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        /* Form styles */
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        form button {
+            width: 100%;
+            padding: 10px;
+            background: #3498db;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        form button:hover {
+            background: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>XYZ Company</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" onclick="loadContent('home')">Home</a></li>
+                    <li><a href="#" onclick="loadContent('about')">About Us</a></li>
+                    <li><a href="#" onclick="loadContent('contact')">Contact Us</a></li>
+                    <li><a href="#" onclick="loadContent('gallery')">Event Gallery</a></li>
+                    <li><a href="#" onclick="loadContent('registration')">Event Registration</a></li>
+                    <li><a href="#" onclick="loadContent('login')">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" id="main-content">
+        <!-- Content will be loaded here dynamically -->
+    </main>
+
+    <footer>
+        <p>&copy; 2024 XYZ Company. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function loadContent(page) {
+            const content = document.getElementById('main-content');
+            switch(page) {
+                case 'home':
+                    content.innerHTML = `
+                        <h2>Welcome to XYZ Company</h2>
+                        <p>We are dedicated to funding innovative startups and organizing exciting events for entrepreneurs.</p>
+                    `;
+                    break;
+                case 'about':
+                    content.innerHTML = `
+                        <h2>About Us</h2>
+                        <p>XYZ Company is a leading startup incubator and funding organization. We believe in the power of innovation and entrepreneurship.</p>
+                    `;
+                    break;
+                case 'contact':
+                    content.innerHTML = `
+                        <h2>Contact Us</h2>
+                        <form>
+                            <input type="text" placeholder="Name" required>
+                            <input type="email" placeholder="Email" required>
+                            <textarea placeholder="Message" required></textarea>
+                            <button type="submit">Send</button>
+                        </form>
+                    `;
+                    break;
+                case 'gallery':
+                    content.innerHTML = `
+                        <h2>Event Gallery</h2>
+                        <p>Check out photos from our recent events!</p>
+                        <!-- Add event photos here -->
+                    `;
+                    break;
+                case 'registration':
+                    content.innerHTML = `
+                        <h2>Event Registration</h2>
+                        <form>
+                            <input type="text" placeholder="Full Name" required>
+                            <input type="email" placeholder="Email" required>
+                            <input type="text" placeholder="Event Name" required>
+                            <button type="submit">Register</button>
+                        </form>
+                    `;
+                    break;
+                case 'login':
+                    content.innerHTML = `
+                        <h2>Login</h2>
+                        <form>
+                            <input type="email" placeholder="Email" required>
+                            <input type="password" placeholder="Password" required>
+                            <button type="submit">Login</button>
+                        </form>
+                    `;
+                    break;
+            }
+        }
+
+        // Load home page by default
+        loadContent('home');
+    </script>
+</body>
+</html>
